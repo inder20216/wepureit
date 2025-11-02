@@ -1,0 +1,2042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEPURE WATERTECH - RO Systems & Spare Parts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            height: 60px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #00d4ff;
+        }
+
+        .nav-btn {
+            background: #0066cc;
+            padding: 12px 30px;
+            border-radius: 5px;
+        }
+
+        .nav-btn:hover {
+            background: #0052a3;
+            color: white !important;
+        }
+
+        /* Video Background Hero */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #0066cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #0052a3;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .products h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .product-content {
+            padding: 20px;
+        }
+
+        .product-content h3 {
+            color: #0066cc;
+            margin-bottom: 10px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #f4f4f4;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            min-width: 250px;
+        }
+
+        .contact-item h3 {
+            color: #0066cc;
+            margin-bottom: 10px;
+        }
+
+/* /* About Section - Enhanced */
+.about-section {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #0066cc, #00a8ff);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    animation: slideInLeft 0.6s ease;
+}
+
+.about-title {
+    font-size: 2.8rem;
+    color: #333;
+    margin-bottom: 30px;
+    line-height: 1.3;
+    animation: slideInLeft 0.8s ease;
+}
+
+.highlight {
+    color: #0066cc;
+    position: relative;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #0066cc, #00a8ff);
+    animation: expandWidth 1s ease 0.5s both;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    animation: fadeInUp 0.8s ease;
+}
+
+.motto-text {
+    font-size: 1.25rem !important;
+    color: #0066cc;
+    font-style: italic;
+    font-weight: 500;
+    padding: 15px 20px;
+    background: rgba(0, 102, 204, 0.05);
+    border-left: 4px solid #0066cc;
+    border-radius: 5px;
+    margin-bottom: 25px !important;
+}
+
+.intro-text {
+    font-size: 1.3rem !important;
+    color: #0066cc;
+    font-weight: 500;
+    margin-top: 30px !important;
+}
+
+.purpose-text {
+    font-size: 1.25rem !important;
+    color: #0066cc;
+    font-weight: 600;
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(0, 102, 204, 0.05);
+    border-left: 4px solid #0066cc;
+    border-radius: 5px;
+}
+
+/* Core Values Section */
+.core-values-section {
+    max-width: 1200px;
+    margin: 80px auto 0;
+    padding: 0 20px;
+}
+
+.core-values-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #0066cc;
+    margin-bottom: 50px;
+}
+
+.core-values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.value-card {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+    text-align: left;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.value-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.value-card h4 {
+    font-size: 1.8rem;
+    color: #0066cc;
+    margin-bottom: 15px;
+}
+
+.value-main {
+    font-size: 1.15rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.value-detail {
+    font-size: 1.05rem;
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes expandWidth {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 2rem;
+    }
+    
+    .core-values-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .value-card {
+        padding: 30px 20px;
+    }
+}
+
+/* Features Section with Images */
+.features-detailed {
+    padding: 80px 20px;
+    background: white;
+}
+
+.features-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.features-header h2 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.feature-row {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.feature-row.reverse {
+    direction: rtl;
+}
+
+.feature-row.reverse > * {
+    direction: ltr;
+}
+
+.feature-image {
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.feature-image:hover {
+    transform: scale(1.05);
+}
+
+.feature-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.feature-text h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.feature-text p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+}
+
+/* Responsive for Features */
+@media (max-width: 768px) {
+    .feature-row,
+    .feature-row.reverse {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        direction: ltr;
+    }
+    
+    .feature-image img {
+        height: 250px;
+    }
+    
+    .feature-text h3 {
+        font-size: 1.5rem;
+    }
+    
+    .feature-text p {
+        font-size: 1rem;
+    }
+}
+
+/* Services Section - Enhanced */
+.services-section {
+    padding: 0;
+    background: linear-gradient(180deg, #f9f9f9 0%, #ffffff 100%);
+}
+
+.services-header-bg {
+    background: linear-gradient(135deg, #0066cc, #00a8ff);
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.services-header-bg::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+}
+
+.services-header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.services-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.services-header-content h2 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.services-header-content p {
+    font-size: 1.3rem;
+    opacity: 0.95;
+}
+
+.services-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+/* Service Mega Card */
+.service-mega-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-bottom: 60px;
+    transition: transform 0.3s;
+}
+
+.service-mega-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+}
+
+.service-card-header {
+    padding: 40px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    text-align: center;
+}
+
+.products-header {
+    background: linear-gradient(135deg, #0066cc, #00a8ff);
+}
+
+.service-icon-large {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.service-card-header h3 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.service-tagline {
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+.service-card-body {
+    padding: 50px;
+}
+
+.service-option {
+    margin-bottom: 40px;
+}
+
+.option-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.option-icon {
+    font-size: 2rem;
+}
+
+.option-header h4 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.service-option > p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.option-features {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.option-features li {
+    padding: 12px 0;
+    padding-left: 30px;
+    position: relative;
+    font-size: 1.05rem;
+    color: #555;
+}
+
+.option-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #0066cc;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #e0e0e0, transparent);
+    margin: 40px 0;
+}
+
+/* Brands Showcase */
+.brands-showcase {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.brand-card {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.brand-card:hover {
+    border-color: #0066cc;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,102,204,0.2);
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0066cc;
+    margin-bottom: 8px;
+}
+
+.brand-desc {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.option-cta {
+    margin-top: 20px;
+}
+
+.inline-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #0066cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.inline-btn:hover {
+    background: #0052a3;
+    transform: translateX(5px);
+}
+
+/* Comparison Section */
+.comparison-section {
+    margin-top: 60px;
+}
+
+.comparison-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.comparison-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+/* Plan Cards */
+.plan-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    position: relative;
+}
+
+.plan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.featured-plan {
+    border: 3px solid #0066cc;
+    background: linear-gradient(135deg, #ffffff, #f0f7ff);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -15px;
+    right: 30px;
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(255,107,53,0.4);
+}
+
+.plan-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.plan-icon {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+.plan-header h4 {
+    font-size: 2rem;
+    color: #0066cc;
+    margin-bottom: 5px;
+}
+
+.plan-name {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.plan-price {
+    text-align: center;
+    margin: 30px 0;
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 12px;
+}
+
+.price-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.price-amount {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #0066cc;
+}
+
+.price-period {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.plan-features h5 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.plan-features ul {
+    list-style: none;
+}
+
+.plan-features li {
+    padding: 12px 0;
+    padding-left: 35px;
+    position: relative;
+    font-size: 1.05rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.plan-features li.included {
+    color: #28a745;
+}
+
+.plan-features li.excluded {
+    color: #dc3545;
+    opacity: 0.7;
+}
+
+.plan-features li.premium {
+    color: #0066cc;
+    font-weight: 600;
+}
+
+.plan-note {
+    background: #fff3cd;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 0.95rem;
+    color: #856404;
+}
+
+.plan-highlight {
+    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+    color: #155724;
+    font-size: 1.05rem;
+}
+
+.plan-ideal {
+    margin: 25px 0;
+    padding: 15px;
+    background: #e3f2fd;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #0d47a1;
+}
+
+.plan-btn {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    margin-top: 25px;
+}
+
+.amc-btn {
+    background: #6c757d;
+    color: white;
+}
+
+.amc-btn:hover {
+    background: #5a6268;
+}
+
+.camc-btn {
+    background: linear-gradient(135deg, #0066cc, #00a8ff);
+    color: white;
+    box-shadow: 0 5px 20px rgba(0,102,204,0.3);
+}
+
+.camc-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0,102,204,0.4);
+}
+
+/* Comparison Table */
+.comparison-table {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    margin-bottom: 50px;
+}
+
+.comparison-table h4 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 18px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.comparison-table th {
+    background: #f8f9fa;
+    font-weight: 700;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.comparison-table .featured-col {
+    background: #e3f2fd;
+    color: #0066cc;
+    font-weight: 600;
+}
+
+/* CTA Banner */
+.services-cta-banner {
+    background: linear-gradient(135deg, #0066cc, #00a8ff);
+    padding: 60px 40px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+}
+
+.cta-content h3 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+    opacity: 0.95;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    padding: 18px 40px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+.primary-cta {
+    background: white;
+    color: #0066cc;
+}
+
+.primary-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255,255,255,0.3);
+}
+
+.secondary-cta {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: 2px solid white;
+}
+
+.secondary-cta:hover {
+    background: white;
+    color: #0066cc;
+}
+
+/* Responsive Services */
+@media (max-width: 1024px) {
+    .plans-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .brands-showcase {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-header-content h2 {
+        font-size: 2rem;
+    }
+    
+    .service-card-body {
+        padding: 30px 20px;
+    }
+    
+    .brands-showcase {
+        grid-template-columns: 1fr;
+    }
+    
+    .comparison-table {
+        overflow-x: auto;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .cta-btn {
+        width: 100%;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-title {
+        font-size: 2rem;
+    }
+    
+    .about-visual {
+        height: 300px;
+    }
+    
+    .circle-bg {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .stats-mini {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Contact Section with Map */
+.contact-map {
+    padding: 80px 20px;
+    background: white;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+}
+
+.contact-info-side h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-details {
+    margin-top: 30px;
+}
+
+.contact-detail-item {
+    margin-bottom: 25px;
+}
+
+.contact-detail-item strong {
+    font-size: 1.1rem;
+    color: #0066cc;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.contact-detail-item p {
+    color: #666;
+    line-height: 1.6;
+    margin: 5px 0;
+}
+
+.contact-detail-item a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.contact-detail-item a:hover {
+    text-decoration: underline;
+}
+
+.map-side {
+    position: relative;
+}
+
+.directions-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 30px;
+    background: #000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.directions-btn:hover {
+    background: #333;
+}
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+            .nav-menu {
+                display: none;
+            }
+        }
+/* Stats Section */
+.stats-section {
+    background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+    padding: 60px 20px;
+}
+
+.stats-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.stat-box h2 {
+    font-size: 3rem;
+    color: #0066cc;
+    margin-bottom: 10px;
+}
+
+.stat-box p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Why Choose Section */
+.why-choose {
+    padding: 80px 20px;
+    background: white;
+    text-align: center;
+}
+
+.why-choose h2 {
+    font-size: 2.5rem;
+    color: #0066cc;
+    margin-bottom: 10px;
+}
+
+.why-choose .subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+}
+
+.features-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.feature-box {
+    background: #f8f9fa;
+    padding: 40px 30px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.feature-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.feature-box h3 {
+    color: #0066cc;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.feature-box p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Featured Products Preview */
+.featured-preview {
+    padding: 80px 20px;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+.featured-preview h2 {
+    font-size: 2.5rem;
+    color: #0066cc;
+    margin-bottom: 10px;
+}
+
+.featured-preview .subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+}
+
+.preview-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* 4-Column Grid for Products */
+.preview-grid-4 {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.product-type {
+    color: #0066cc;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 10px 0;
+}
+
+.product-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.product-link:hover {
+    color: #0052a3;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .preview-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .preview-grid-4 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.preview-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.preview-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.preview-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.preview-card h3 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.preview-card p {
+    color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stats-container,
+    .features-grid,
+    .preview-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    transition: all 0.3s ease;
+    animation: pulse-whatsapp 2s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-icon {
+    width: 35px;
+    height: 35px;
+}
+
+@keyframes pulse-whatsapp {
+    0% {
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(37, 211, 102, 0.7);
+    }
+    100% {
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    }
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .whatsapp-icon {
+        width: 28px;
+        height: 28px;
+    }
+}
+    
+    /* Mobile Responsiveness - index.html */
+@media (max-width: 768px) {
+    /* Hero Section */
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+    
+    /* Navigation - Mobile Menu */
+    .nav-menu {
+        display: none;
+    }
+    
+    /* Stats Section */
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .stat-box h2 {
+        font-size: 2rem;
+    }
+    
+    /* About Section */
+    .about-title {
+        font-size: 2rem;
+    }
+    
+    /* Features Grid */
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Feature Images */
+    .feature-row {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Featured Products */
+    .preview-grid-4 {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Contact Section */
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    /* WhatsApp Button */
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .whatsapp-icon {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background: white;
+    transition: all 0.3s;
+    border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    list-style: none;
+    background: white;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.mobile-menu.active {
+    max-height: 400px;
+}
+
+.mobile-menu li {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 15px 20px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.mobile-menu a:hover {
+    background: #f8f9fa;
+    color: #0066cc;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .mobile-menu {
+        display: block;
+    }
+    
+    /* Change hamburger color when scrolled */
+    .navbar.scrolled .hamburger span {
+        background: #333;
+    }
+}
+
+/* Simple Footer with Social Media */
+.simple-footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-social {
+    margin-bottom: 25px;
+}
+
+.footer-social p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.social-btn.facebook {
+    background: #1877f2;
+    color: white;
+}
+
+.social-btn.facebook:hover {
+    background: #0d65d9;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(24, 119, 242, 0.4);
+}
+
+.social-btn.instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white;
+}
+
+.social-btn.instagram:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(225, 48, 108, 0.4);
+}
+
+.social-btn.linkedin {
+    background: #0077b5;
+    color: white;
+}
+
+.social-btn.linkedin:hover {
+    background: #005885;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 119, 181, 0.4);
+}
+
+.footer-copyright {
+    font-size: 0.95rem;
+    color: #999;
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid #333;
+}
+
+@media (max-width: 768px) {
+    .social-icons {
+        gap: 15px;
+    }
+    
+    .social-btn {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+    </style>
+</head>
+<body>
+ <!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="nav-container">
+        <img src="./images/logo.png" alt="WePureIt Logo" class="logo">
+        
+        <!-- Desktop Menu -->
+        <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact" class="nav-btn">Get Quote</a></li>
+        </ul>
+        
+        <!-- Mobile Hamburger -->
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <ul class="mobile-menu" id="mobileMenu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Get Quote</a></li>
+    </ul>
+</nav>
+
+    <!-- Hero Section with Video -->
+    <section class="hero" id="home">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="./videos/water-background.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>WEPURE WATERTECH</h1>
+            <p>Manufacturer and Distributor of all types of RO Systems and Spare Parts</p>
+            <a href="#products" class="cta-button">View Products</a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+<section class="stats-section">
+    <div class="stats-container">
+        <div class="stat-box">
+            <h2>10+</h2>
+            <p>Years Experience</p>
+        </div>
+        <div class="stat-box">
+            <h2>5000+</h2>
+            <p>Satisfied Clients</p>
+        </div>
+        <div class="stat-box">
+            <h2>100%</h2>
+            <p>Non-Toxic Treatment</p>
+        </div>
+        <div class="stat-box">
+            <h2>24/7</h2>
+            <p>Support</p>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about-section" id="about">
+    <div class="about-container">
+        <div class="about-content">
+            <div class="about-badge">💧 About Us</div>
+            <h2 class="about-title">Delivering Pure Water, <span class="highlight">Better Living</span></h2>
+            
+            <div class="about-text">
+                <p class="motto-text"><em>"We believe every drop counts"</em> — that's why we're committed to delivering pure, safe, and healthy water to every family and enterprise.</p>
+                
+                <p class="motto-text"><em>"We care about what you drink"</em> — combining technology, service, and trust to keep your water pure and your family safe.</p>
+                
+                <p class="intro-text">At <strong>WEPUREIT</strong>, we believe that pure water is the foundation of good health and better living.</p>
+                
+                <p>With a strong presence across <strong>PAN India</strong>, we specialize in water purification systems, RO installations, and Annual Maintenance Contracts (AMC) for both residential and commercial clients.</p>
+                
+                <p>Our journey began with a simple mission — to make clean, safe, and sustainable drinking water accessible to every household and business. Over the years, we've built a reputation for reliability, innovation, and exceptional customer service.</p>
+                
+                <p>Backed by a team of skilled professionals and advanced technology, we provide <strong>end-to-end water treatment solutions</strong> — from installation to maintenance — ensuring uninterrupted purity and peace of mind.</p>
+                
+                <p>Whether it's a small household unit or a large-scale industrial setup, we deliver customised, cost-effective, and energy-efficient purification solutions designed for long-term performance.</p>
+                
+                <p class="purpose-text">At <strong>WEPUREIT</strong>, purity isn't just a promise — <span class="highlight">it's our purpose.</span></p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Core Values Section -->
+    <div class="core-values-section">
+        <h3 class="core-values-title">🌿 Our Core Values</h3>
+        <div class="core-values-grid">
+            
+            <div class="value-card">
+                <div class="value-icon">💧</div>
+                <h4>Purity First</h4>
+                <p class="value-main">Ensuring the highest standards of water quality.</p>
+                <p class="value-detail">We never compromise on water quality. Every system we install undergoes rigorous testing to meet and exceed industry standards. From advanced multi-stage filtration to regular quality checks, we ensure every drop you consume is pure, safe, and healthy.</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">🤝</div>
+                <h4>Customer Trust</h4>
+                <p class="value-main">Building lasting relationships through reliable service.</p>
+                <p class="value-detail">Your trust is our greatest asset. We believe in transparent communication, honest pricing, and prompt service. Our dedicated customer support team is available 24/7 to address your concerns, ensuring you always have access to clean water and peace of mind.</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">🚀</div>
+                <h4>Innovation</h4>
+                <p class="value-main">Adopting the latest purification technologies.</p>
+                <p class="value-detail">We stay ahead of the curve by continuously upgrading our technology. From smart RO systems with digital monitoring to energy-efficient pumps and IoT-enabled maintenance alerts, we bring you cutting-edge solutions that make water purification smarter and more efficient.</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">🌍</div>
+                <h4>Sustainability</h4>
+                <p class="value-main">Protecting the planet with eco-conscious solutions.</p>
+                <p class="value-detail">We care about the environment as much as we care about your health. Our systems are designed to minimize water wastage, reduce energy consumption, and use eco-friendly materials. By choosing WEPUREIT, you're not just investing in pure water — you're contributing to a sustainable future.</p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Section -->
+<section class="why-choose">
+    <h2>Why Choose WEPUREIT</h2>
+    <p class="subtitle">Excellence in stainless steel water treatment technology</p>
+    
+    <div class="features-grid">
+        <div class="feature-box">
+            <div class="feature-icon">💧</div>
+            <h3>Premium Quality</h3>
+            <p>ISI, BIS grade stainless steel ensuring 100% non-toxic water treatment, meeting quality standards.</p>
+        </div>
+        <div class="feature-box">
+            <div class="feature-icon">👤</div>
+            <h3>Industry Leader</h3>
+            <p>Trusted by thousands of satisfied customers. Our reputation for proven excellence.</p>
+        </div>
+        <div class="feature-box">
+            <div class="feature-icon">🔧</div>
+            <h3>Expert Service</h3>
+            <p>Professional installation and dedicated support available.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section with Images -->
+<section class="features-detailed" id="features">
+    <div class="features-header">
+        <h2>Features</h2>
+    </div>
+    
+    <div class="feature-row">
+        <div class="feature-image">
+            <img src="./images/water-filter.jpg" alt="Advanced Filtration">
+        </div>
+        <div class="feature-text">
+            <h3>Advanced Filtration Technology</h3>
+            <p>Our water purifiers utilize advanced filtration technology to effectively remove impurities, chemicals, and bacteria from the water, ensuring clean and safe drinking water for your family.</p>
+        </div>
+    </div>
+    
+    <div class="feature-row reverse">
+        <div class="feature-text">
+            <h3>Long-lasting Membranes and Filters</h3>
+            <p>Enjoy convenience and savings with our durable membranes and filters. Designed to last, they reduce the need for frequent replacements, ensuring reliable performance and uninterrupted access to clean water.</p>
+        </div>
+        <div class="feature-image">
+            <img src="./images/Membrane.png" alt="Long-lasting Membranes">
+        </div>
+    </div>
+    
+    <div class="feature-row">
+        <div class="feature-image">
+            <img src="./images/Energy.png" alt="Energy Efficient">
+        </div>
+        <div class="feature-text">
+            <h3>Energy-Efficient Pumps</h3>
+            <p>Save on utility bills and reduce your carbon footprint with our energy-efficient pumps. These eco-friendly pumps maintain optimal water flow, making them both budget and planet-friendly choices for water purification.</p>
+        </div>
+    </div>
+</section>
+
+<!<!-- Featured Products Preview -->
+<section class="featured-preview">
+    <h2>Featured Products</h2>
+    <p class="subtitle">Commercial RO Plants for Every Need</p>
+    
+    <div class="preview-grid-4">
+        <div class="preview-card">
+            <div class="preview-icon">💧</div>
+            <h3>50 LPH RO Plant</h3>
+            <p class="product-type">Assembled RO Plant</p>
+            <p>Perfect for small offices and homes requiring reliable water purification.</p>
+            <a href="products.html" class="product-link">View Details →</a>
+        </div>
+        
+        <div class="preview-card">
+            <div class="preview-icon">💦</div>
+            <h3>100 LPH RO Plant</h3>
+            <p class="product-type">Commercial RO</p>
+            <p>Ideal for restaurants, cafes, and small commercial establishments.</p>
+            <a href="products.html" class="product-link">View Details →</a>
+        </div>
+        
+        <div class="preview-card">
+            <div class="preview-icon">🌊</div>
+            <h3>250 LPH RO Plant</h3>
+            <p class="product-type">Commercial RO</p>
+            <p>Designed for hotels, hospitals, and medium-sized commercial facilities.</p>
+            <a href="products.html" class="product-link">View Details →</a>
+        </div>
+        
+        <div class="preview-card">
+            <div class="preview-icon">🏭</div>
+            <h3>500 LPH RO Plant</h3>
+            <p class="product-type">Commercial RO</p>
+            <p>Heavy-duty system for large industries and high-demand applications.</p>
+            <a href="products.html" class="product-link">View Details →</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- Contact Section with Map -->
+<section class="contact-map" id="contact">
+    <div class="contact-container">
+        <div class="contact-info-side">
+            <h2>Contact Us</h2>
+            <hr style="width: 60px; border: 2px solid #0066cc; margin: 20px 0;">
+            
+            <p style="font-size: 1.2rem; margin-bottom: 30px; color: #666;">Feel free to connect with us.</p>
+            
+            <div class="contact-details">
+                <div class="contact-detail-item">
+                    <strong>📍 Location:</strong>
+                    <p>Sector 8, Old Railway Road<br>
+                    Subhash Nagar, Gurgaon<br>
+                    Haryana 122001, India</p>
+                </div>
+                
+                <div class="contact-detail-item">
+                    <strong>📧 Email:</strong>
+                    <p><a href="mailto:sales@wepureit.in">sales@wepureit.in</a></p>
+                </div>
+                
+                <div class="contact-detail-item">
+                    <strong>📞 Dealer Inquiry:</strong>
+                    <p><a href="tel:+919873737498">+91 98737 37498</a></p>
+                </div>
+                
+                <div class="contact-detail-item">
+                    <strong>💬 Customer Care:</strong>
+                    <p><a href="tel:+919873737497">+91 98737 37497</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="map-side">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.0833916449896!2d77.02113731508303!3d28.465265082482086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDI3JzU0LjkiTiA3N8KwMDEnMjQuMSJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin" 
+                width="100%" 
+                height="500" 
+                style="border:0; border-radius: 10px;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+            <a href="https://www.google.com/maps?q=28.465265,77.023353" target="_blank" class="directions-btn">
+                🧭 GET DIRECTIONS
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Simple Footer with Social Media -->
+<footer class="simple-footer">
+    <div class="footer-content">
+        <div class="footer-social">
+            <p>Follow Us:</p>
+            <div class="social-icons">
+                <a href="https://facebook.com/wepureit" target="_blank" class="social-btn facebook" title="Facebook">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/>
+                    </svg>
+                </a>
+                
+                <a href="https://instagram.com/wepureit" target="_blank" class="social-btn instagram" title="Instagram">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/>
+                    </svg>
+                </a>
+                
+                <a href="https://linkedin.com/company/wepureit" target="_blank" class="social-btn linkedin" title="LinkedIn">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        
+        <p class="footer-copyright">&copy; 2025 WEPUREIT. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+// Mobile Menu Toggle
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+        });
+    });
+}
+
+// Change navbar style on scroll
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    const navLinks = document.querySelectorAll('.nav-menu a:not(.nav-btn)');
+    const hamburger = document.querySelector('.hamburger');
+    
+    if (window.scrollY > 100) {
+        // Scrolled down - solid white background, dark text
+        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+        navbar.classList.add('scrolled');
+        navLinks.forEach(link => link.style.color = '#333');
+        
+        // Change hamburger to dark when scrolled
+        if (hamburger) {
+            hamburger.querySelectorAll('span').forEach(span => {
+                span.style.background = '#333';
+            });
+        }
+    } else {
+        // At top - transparent background, white text
+        navbar.style.background = 'rgba(255, 255, 255, 0.05)';
+        navbar.style.boxShadow = 'none';
+        navbar.classList.remove('scrolled');
+        navLinks.forEach(link => link.style.color = 'white');
+        
+        // Change hamburger to white at top
+        if (hamburger) {
+            hamburger.querySelectorAll('span').forEach(span => {
+                span.style.background = 'white';
+            });
+        }
+    }
+});
+</script>
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/919873737498?text=Hi%2C%20I%27m%20interested%20in%20your%20RO%20products" 
+   class="whatsapp-float" 
+   target="_blank">
+    <svg viewBox="0 0 32 32" class="whatsapp-icon">
+        <path fill="currentColor" d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.305 1.43 1.43-5.305-0.292-0.507c-1.224-2.162-1.87-4.588-1.87-7.070 0-7.467 6.070-13.533 13.533-13.533s13.533 6.067 13.533 13.533-6.067 13.533-13.533 13.533zM21.867 18.267c-0.373-0.187-2.227-1.093-2.573-1.227-0.347-0.133-0.6-0.187-0.853 0.2-0.253 0.373-0.973 1.227-1.187 1.467-0.213 0.253-0.427 0.28-0.8 0.093-0.373-0.187-1.573-0.573-2.987-1.84-1.107-0.987-1.853-2.2-2.067-2.573-0.213-0.373-0.013-0.573 0.173-0.76 0.173-0.16 0.373-0.427 0.56-0.64 0.187-0.213 0.267-0.373 0.4-0.627 0.133-0.253 0.067-0.467-0.027-0.653-0.093-0.187-0.853-2.053-1.173-2.8-0.307-0.733-0.627-0.627-0.853-0.64-0.213-0.013-0.467-0.013-0.72-0.013s-0.667 0.093-1.013 0.467c-0.347 0.373-1.333 1.307-1.333 3.187s1.36 3.693 1.547 3.947c0.187 0.253 2.627 4.013 6.373 5.627 0.893 0.387 1.587 0.613 2.133 0.787 0.893 0.28 1.707 0.24 2.347 0.147 0.72-0.107 2.227-0.907 2.533-1.787 0.32-0.88 0.32-1.64 0.227-1.787-0.080-0.133-0.333-0.227-0.707-0.413z"/>
+    </svg>
+</a>
+</body>
+</html>

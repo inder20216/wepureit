@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - WEPUREIT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            height: 60px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #0066cc;
+        }
+
+        .nav-btn {
+            background: #0066cc;
+            color: white !important;
+            padding: 12px 30px;
+            border-radius: 5px;
+        }
+
+        .nav-btn:hover {
+            background: #0052a3;
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 150px 20px 80px;
+            background: linear-gradient(135deg, #0066cc, #00a8ff);
+            color: white;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Products Section */
+        .products-section {
+            padding: 80px 20px;
+            background: #f9f9f9;
+        }
+
+        .product-detail {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            transition: transform 0.3s;
+        }
+
+        .product-detail:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .product-image-area {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .product-icon-large {
+            font-size: 8rem;
+        }
+
+        .product-info {
+            padding: 40px;
+        }
+
+        .product-badge {
+            display: inline-block;
+            background: #0066cc;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .product-info h2 {
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .product-capacity {
+            font-size: 1.3rem;
+            color: #0066cc;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .product-description {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .product-features-list {
+            margin-bottom: 25px;
+        }
+
+        .product-features-list h3 {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .product-features-list ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .product-features-list li {
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .product-features-list li::before {
+            content: '✓ ';
+            color: #0066cc;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #0066cc, #00a8ff);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,102,204,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .product-detail {
+                grid-template-columns: 1fr;
+            }
+
+            .product-icon-large {
+                font-size: 5rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .product-info h2 {
+                font-size: 1.8rem;
+            }
+
+            .product-features-list ul {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+        }
+  /* Hero Banner with Image */
+.hero-banner {
+    position: relative;
+    height: 500px;
+    margin-top: 90px;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(3px);
+    transform: scale(1.1);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);  
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 3;
+    width: 90%;
+    max-width: 1000px;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+    .hero-banner {
+        height: 350px;
+    }
+    
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-text p {
+        font-size: 1.1rem;
+    }
+}
+  
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    transition: all 0.3s ease;
+    animation: pulse-whatsapp 2s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-icon {
+    width: 35px;
+    height: 35px;
+}
+
+@keyframes pulse-whatsapp {
+    0% {
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(37, 211, 102, 0.7);
+    }
+    100% {
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    }
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .whatsapp-icon {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Mobile Responsiveness - products.html */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .hero-banner {
+        height: 300px;
+        margin-top: 80px;
+    }
+    
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-text p {
+        font-size: 1rem;
+    }
+    
+    .product-detail {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-image-area {
+        height: 250px;
+    }
+    
+    .product-icon-large {
+        font-size: 5rem;
+    }
+    
+    .product-info {
+        padding: 30px 20px;
+    }
+    
+    .product-info h2 {
+        font-size: 1.8rem;
+    }
+    
+    .product-features-list ul {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-banner {
+        height: 250px;
+    }
+    
+    .hero-text h1 {
+        font-size: 1.5rem;
+    }
+    
+    .product-info h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background: #333;  /* ← Dark color for white navbar */
+    transition: all 0.3s;
+    border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    list-style: none;
+    background: white;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.mobile-menu.active {
+    max-height: 400px;
+}
+
+.mobile-menu li {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 15px 20px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.mobile-menu a:hover {
+    background: #f8f9fa;
+    color: #0066cc;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .mobile-menu {
+        display: block;
+    }
+    
+    /* Change hamburger color when scrolled */
+    .navbar.scrolled .hamburger span {
+        background: #333;
+    }
+}
+
+  </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html">
+            <img src="./images/logo.png" alt="WePureIt Logo" class="logo">
+        </a>
+        
+        <!-- Desktop Menu -->
+        <ul class="nav-menu">
+            <li><a href="index.html" onclick="navigateToHome(event, '')">Home</a></li>
+            <li><a href="index.html#features" onclick="navigateToHome(event, 'features')">Features</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="index.html#about" onclick="navigateToHome(event, 'about')">About</a></li>
+            <li><a href="index.html#contact" onclick="navigateToHome(event, 'contact')" class="nav-btn">Get Quote</a></li>
+        </ul>
+        
+        <!-- Mobile Hamburger -->
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <ul class="mobile-menu" id="mobileMenu">
+        <li><a href="index.html" onclick="navigateToHome(event, '')">Home</a></li>
+        <li><a href="index.html#features" onclick="navigateToHome(event, 'features')">Features</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="index.html#about" onclick="navigateToHome(event, 'about')">About</a></li>
+        <li><a href="index.html#contact" onclick="navigateToHome(event, 'contact')">Get Quote</a></li>
+    </ul>
+</nav>
+
+<!-- Hero Section with Image -->
+<section class="hero-banner">
+    <img src="./images/Product-type.jpg" alt="Products" class="hero-image">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+        <h1>Our Commercial RO Plants</h1>
+        <p>High-quality water purification solutions for every need</p>
+    </div>
+</section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        
+        <!-- Product 1: 50 LPH -->
+        <div class="product-detail">
+            <div class="product-image-area">
+                <div class="product-icon-large">💧</div>
+            </div>
+            <div class="product-info">
+                <span class="product-badge">Best for Small Spaces</span>
+                <h2>50 LPH RO Plant</h2>
+                <p class="product-capacity">50 Liters Per Hour</p>
+                <p class="product-description">
+                    Our 50 LPH Assembled RO Plant is perfect for small offices, homes, and clinics. 
+                    This compact yet powerful system delivers pure, safe drinking water with minimal space requirements.
+                </p>
+                <div class="product-features-list">
+                    <h3>Key Features:</h3>
+                    <ul>
+                        <li>Compact design</li>
+                        <li>Easy installation</li>
+                        <li>Low maintenance</li>
+                        <li>Energy efficient</li>
+                        <li>TDS controller</li>
+                        <li>1-year warranty</li>
+                    </ul>
+                </div>
+                <a href="index.html#contact" class="contact-btn">Request Quote</a>
+            </div>
+        </div>
+
+        <!-- Product 2: 100 LPH -->
+        <div class="product-detail">
+            <div class="product-image-area">
+                <div class="product-icon-large">💦</div>
+            </div>
+            <div class="product-info">
+                <span class="product-badge">Popular Choice</span>
+                <h2>100 LPH Commercial RO</h2>
+                <p class="product-capacity">100 Liters Per Hour</p>
+                <p class="product-description">
+                    Ideal for restaurants, cafes, and small commercial establishments. The 100 LPH system 
+                    provides consistent water quality to meet your daily business needs.
+                </p>
+                <div class="product-features-list">
+                    <h3>Key Features:</h3>
+                    <ul>
+                        <li>Multi-stage filtration</li>
+                        <li>Auto-flush system</li>
+                        <li>SS pre-filter housing</li>
+                        <li>UV sterilization option</li>
+                        <li>Digital TDS meter</li>
+                        <li>2-year warranty</li>
+                    </ul>
+                </div>
+                <a href="index.html#contact" class="contact-btn">Request Quote</a>
+            </div>
+        </div>
+
+        <!-- Product 3: 250 LPH -->
+        <div class="product-detail">
+            <div class="product-image-area">
+                <div class="product-icon-large">🌊</div>
+            </div>
+            <div class="product-info">
+                <span class="product-badge">Mid-Range Solution</span>
+                <h2>250 LPH Commercial RO</h2>
+                <p class="product-capacity">250 Liters Per Hour</p>
+                <p class="product-description">
+                    Designed for hotels, hospitals, and medium-sized commercial facilities requiring 
+                    higher water output without compromising on quality.
+                </p>
+                <div class="product-features-list">
+                    <h3>Key Features:</h3>
+                    <ul>
+                        <li>High-pressure pump</li>
+                        <li>Premium membranes</li>
+                        <li>Auto-on/off feature</li>
+                        <li>Storage tank compatible</li>
+                        <li>Smart monitoring</li>
+                        <li>3-year warranty</li>
+                    </ul>
+                </div>
+                <a href="index.html#contact" class="contact-btn">Request Quote</a>
+            </div>
+        </div>
+
+        <!-- Product 4: 500 LPH -->
+        <div class="product-detail">
+            <div class="product-image-area">
+                <div class="product-icon-large">🏭</div>
+            </div>
+            <div class="product-info">
+                <span class="product-badge">Industrial Grade</span>
+                <h2>500 LPH Commercial RO</h2>
+                <p class="product-capacity">500 Liters Per Hour</p>
+                <p class="product-description">
+                    Heavy-duty system for large industries, manufacturing units, and high-demand applications. 
+                    Built for continuous operation with maximum efficiency.
+                </p>
+                <div class="product-features-list">
+                    <h3>Key Features:</h3>
+                    <ul>
+                        <li>Industrial-grade components</li>
+                        <li>PLC automation ready</li>
+                        <li>Multiple membrane setup</li>
+                        <li>CIP system</li>
+                        <li>Remote monitoring</li>
+                        <li>5-year warranty</li>
+                    </ul>
+                </div>
+                <a href="index.html#contact" class="contact-btn">Request Quote</a>
+            </div>
+        </div>
+
+    </section>
+
+<script>
+// Navigation fix for services page
+function navigateToHome(event, section) {
+    event.preventDefault();
+    if (section) {
+        window.location.href = 'index.html#' + section;
+    } else {
+        window.location.href = 'index.html';
+    }
+}
+
+// Mobile Menu Toggle
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+        });
+    });
+}
+</script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 WEPUREIT. All rights reserved.</p>
+        <p style="margin-top: 10px;"><a href="index.html" style="color: white; text-decoration: none;">← Back to Home</a></p>
+    </footer>
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/919873737498?text=Hi%2C%20I%27m%20interested%20in%20your%20RO%20products" 
+   class="whatsapp-float" 
+   target="_blank">
+    <svg viewBox="0 0 32 32" class="whatsapp-icon">
+        <path fill="currentColor" d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.305 1.43 1.43-5.305-0.292-0.507c-1.224-2.162-1.87-4.588-1.87-7.070 0-7.467 6.070-13.533 13.533-13.533s13.533 6.067 13.533 13.533-6.067 13.533-13.533 13.533zM21.867 18.267c-0.373-0.187-2.227-1.093-2.573-1.227-0.347-0.133-0.6-0.187-0.853 0.2-0.253 0.373-0.973 1.227-1.187 1.467-0.213 0.253-0.427 0.28-0.8 0.093-0.373-0.187-1.573-0.573-2.987-1.84-1.107-0.987-1.853-2.2-2.067-2.573-0.213-0.373-0.013-0.573 0.173-0.76 0.173-0.16 0.373-0.427 0.56-0.64 0.187-0.213 0.267-0.373 0.4-0.627 0.133-0.253 0.067-0.467-0.027-0.653-0.093-0.187-0.853-2.053-1.173-2.8-0.307-0.733-0.627-0.627-0.853-0.64-0.213-0.013-0.467-0.013-0.72-0.013s-0.667 0.093-1.013 0.467c-0.347 0.373-1.333 1.307-1.333 3.187s1.36 3.693 1.547 3.947c0.187 0.253 2.627 4.013 6.373 5.627 0.893 0.387 1.587 0.613 2.133 0.787 0.893 0.28 1.707 0.24 2.347 0.147 0.72-0.107 2.227-0.907 2.533-1.787 0.32-0.88 0.32-1.64 0.227-1.787-0.080-0.133-0.333-0.227-0.707-0.413z"/>
+    </svg>
+</a>
+</body>
+</html>
